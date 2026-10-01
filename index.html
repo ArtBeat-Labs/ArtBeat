@@ -2,6 +2,19 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>ART BEAT — Where Paint Splatters Meet Pure Rhythm!</title>
+<meta name="description" content="ART BEAT is an art, music and dance studio in Vrindavan Colony, Lucknow. Oil painting, sketching, acrylics, piano, guitar, tabla, singing and dance — all ages, beginner to advanced.">
+<meta name="theme-color" content="#e040a0">
+<link rel="canonical" href="https://artbeat-labs.github.io/ArtBeat/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ART BEAT">
+<meta property="og:url" content="https://artbeat-labs.github.io/ArtBeat/">
+<meta property="og:title" content="ART BEAT — Art, Music &amp; Dance Studio, Lucknow">
+<meta property="og:description" content="Painting, sketching, piano, guitar, tabla, singing and dance classes in Vrindavan Colony, Lucknow. All ages and levels. Open competition on 2 October.">
+<meta property="og:locale" content="en_IN">
+<meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuA3gBcT-bK02kKk-oY2qgj6U7sxkfmf3t0MF26FroQD1g2UZ8Al9KQ1FOvrGXeIlSW47GY8Nz3d9YWuRyOXsLDudbfjpuST22jT-IeDmMtd5tZdRU9SnGo1IlxXJfzekm_Q_Ok3jZTuwKQz0QBSdRBla9p_64uxmsuZTjFMN1rrmdFLB8pdeqk74X3TmNxyJOOgpO92CTvghqyfLvYZy5NIg_F7jAWAUJek3w-lu2bZy9UVyvIqgq2HBg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuA3gBcT-bK02kKk-oY2qgj6U7sxkfmf3t0MF26FroQD1g2UZ8Al9KQ1FOvrGXeIlSW47GY8Nz3d9YWuRyOXsLDudbfjpuST22jT-IeDmMtd5tZdRU9SnGo1IlxXJfzekm_Q_Ok3jZTuwKQz0QBSdRBla9p_64uxmsuZTjFMN1rrmdFLB8pdeqk74X3TmNxyJOOgpO92CTvghqyfLvYZy5NIg_F7jAWAUJek3w-lu2bZy9UVyvIqgq2HBg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e040a0'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='bold' font-size='28' fill='white' text-anchor='middle'%3EAB%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Fredoka:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -45,7 +58,8 @@
             'wiggle': 'wiggle 2.5s ease-in-out infinite',
             'bounce-slow': 'bounce 3s infinite',
             'pulse-fast': 'pulse 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'float': 'float 4s ease-in-out infinite'
+            'float': 'float 4s ease-in-out infinite',
+            'marquee': 'marquee 30s linear infinite'
           },
           keyframes: {
             wiggle: {
@@ -55,6 +69,10 @@
             float: {
               '0%, 100%': { transform: 'translateY(0px)' },
               '50%': { transform: 'translateY(-10px)' },
+            },
+            marquee: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
             }
           }
         }
@@ -64,6 +82,7 @@
 <style>
     @layer base {
       html, body { margin: 0; padding: 0; }
+      html { scroll-padding-top: 7rem; }
       body { overscroll-behavior: none; }
     }
     .wavy-underline {
@@ -86,9 +105,15 @@
       stroke-dasharray: 600;
       animation: heartbeatLine 3.5s linear infinite;
     }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .animate-marquee, .animate-ping, .animate-float,
+      .animate-bounce-slow, .animate-pulse-fast, .animate-ekg { animation: none; }
+    }
   </style>
 </head>
-<body class="bg-[#fff9fc] font-body text-on-surface selection:bg-candy-pink selection:text-white overflow-x-hidden">
+<body class="bg-[#fff9fc] font-body text-on-surface selection:bg-candy-pink selection:text-white overflow-x-clip">
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:bg-candy-yellow focus:text-on-surface focus:font-headline focus:font-black focus:rounded-full focus:candy-border" href="#creative-jams">Skip to content</a>
 <!-- TOP CANDY-BUBBLE STICKY NAVIGATION -->
 <header class="sticky top-0 left-0 right-0 z-50 px-3 sm:px-6 py-3">
 <div class="max-w-7xl mx-auto bg-white/95 backdrop-blur-md rounded-full px-4 sm:px-6 py-2.5 candy-border shadow-candy flex items-center justify-between gap-2">
@@ -105,39 +130,64 @@
 </a>
 <!-- Playful Nav Capsules -->
 <nav class="hidden lg:flex items-center gap-2">
-<a class="px-4 py-1.5 rounded-full font-headline font-bold text-sm text-on-surface hover:bg-candy-yellow transition-all duration-200 hover:-translate-y-0.5" href="#creative-jams">🎨 Splatter Den</a>
-<a class="px-4 py-1.5 rounded-full font-headline font-bold text-sm text-on-surface hover:bg-candy-cyan transition-all duration-200 hover:-translate-y-0.5" href="#creative-jams">🎸 Beat Box</a>
-<a class="px-4 py-1.5 rounded-full font-headline font-bold text-sm text-on-surface hover:bg-candy-lime transition-all duration-200 hover:-translate-y-0.5" href="#interactive-synth">✨ Sound &amp; Color Toy</a>
-<a class="px-4 py-1.5 rounded-full font-headline font-bold text-sm text-on-surface hover:bg-candy-pink hover:text-white transition-all duration-200 hover:-translate-y-0.5" href="#dreamers">🌈 Dreamers</a>
-<a class="px-4 py-1.5 rounded-full font-headline font-bold text-sm text-on-surface hover:bg-candy-purple hover:text-white transition-all duration-200 hover:-translate-y-0.5" href="#schedule">⏰ Chaos Calendar</a>
+<a class="px-4 py-1.5 rounded-full font-headline font-bold text-sm text-on-surface hover:bg-candy-yellow transition-all duration-200 hover:-translate-y-0.5" href="#creative-jams">Splatter Den</a>
+<a class="px-4 py-1.5 rounded-full font-headline font-bold text-sm text-on-surface hover:bg-candy-lime transition-all duration-200 hover:-translate-y-0.5" href="#interactive-synth">Sound &amp; Color Toy</a>
+<a class="px-4 py-1.5 rounded-full font-headline font-bold text-sm text-on-surface hover:bg-candy-pink hover:text-white transition-all duration-200 hover:-translate-y-0.5" href="#dreamers">Dreamers</a>
+<a class="px-4 py-1.5 rounded-full font-headline font-bold text-sm text-on-surface hover:bg-candy-purple hover:text-white transition-all duration-200 hover:-translate-y-0.5" href="#schedule">Chaos Calendar</a>
 </nav>
 <!-- Action Pill Button -->
 <div class="flex items-center gap-2">
-<a class="px-4 sm:px-6 py-2 rounded-full bg-candy-pink text-white font-headline font-black text-xs sm:text-sm tracking-wide candy-border shadow-[3px_3px_0px_#2e1a28] hover:shadow-[5px_5px_0px_#2e1a28] hover:-translate-y-1 hover:bg-[#ff2f9c] active:translate-y-0.5 transition-all flex items-center gap-2" href="#trial">
-<span class="">Free Jam Pass!</span>
-<span class="text-base">🎉</span>
+<a class="px-4 sm:px-6 py-2 rounded-full bg-candy-pink text-white font-headline font-black text-xs sm:text-sm tracking-wide candy-border shadow-[3px_3px_0px_#2e1a28] hover:shadow-[5px_5px_0px_#2e1a28] hover:-translate-y-1 hover:bg-[#ff2f9c] active:translate-y-0.5 transition-all flex items-center gap-2" href="#competition">
+<span class="">Competition · 2 Oct</span>
 </a>
+<button class="lg:hidden w-11 h-11 shrink-0 rounded-full bg-candy-yellow text-on-surface candy-border shadow-[3px_3px_0px_#2e1a28] flex items-center justify-center active:translate-y-0.5 transition-transform" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
 </div>
 </div>
+<nav class="lg:hidden hidden max-w-7xl mx-auto mt-2 p-3 bg-white rounded-3xl candy-border shadow-candy flex-col gap-1" id="mobile-menu">
+<a class="px-4 py-3 rounded-2xl font-headline font-bold text-sm text-on-surface hover:bg-candy-yellow transition-colors" href="#creative-jams">Splatter Den</a>
+<a class="px-4 py-3 rounded-2xl font-headline font-bold text-sm text-on-surface hover:bg-candy-lime transition-colors" href="#interactive-synth">Sound &amp; Color Toy</a>
+<a class="px-4 py-3 rounded-2xl font-headline font-bold text-sm text-on-surface hover:bg-candy-pink hover:text-white transition-colors" href="#dreamers">Dreamers</a>
+<a class="px-4 py-3 rounded-2xl font-headline font-bold text-sm text-on-surface hover:bg-candy-purple hover:text-white transition-colors" href="#schedule">Chaos Calendar</a>
+<a class="px-4 py-3 rounded-2xl font-headline font-bold text-sm text-on-surface hover:bg-candy-cyan transition-colors" href="#competition">Competition · 2 Oct</a>
+</nav>
 </header>
 <!-- ANIMATED PULSING SVG HEARTBEAT TICKER WITH DRIPPING BRUSHES & NOTES -->
-<div class="pt-24 pb-2 w-full bg-candy-yellow/30 border-b-2 border-dashed border-candy-pink/40 overflow-hidden">
-<div class="flex items-center gap-4 animate-marquee whitespace-nowrap text-xs sm:text-sm font-headline font-black text-on-surface">
-<div class="flex items-center gap-8 py-1">
+<div class="py-3 w-full bg-candy-yellow/30 border-b-2 border-dashed border-candy-pink/40 overflow-hidden">
+<div class="flex w-max items-center gap-8 animate-marquee whitespace-nowrap text-xs sm:text-sm font-headline font-black text-on-surface">
+<div class="flex items-center gap-8 py-1 pr-8">
 <span class="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full candy-border shadow-[2px_2px_0px_#2e1a28] rotate-[-2deg]">
-<span class="w-3 h-3 rounded-full bg-candy-pink animate-ping"></span> 🎵 LIVE STUDIO BEAT: Ukuleles &amp; Neon Fingerpaint In Session!
+<span class="w-3 h-3 rounded-full bg-candy-pink animate-ping"></span> LIVE STUDIO BEAT: Ukuleles &amp; Neon Fingerpaint In Session!
         </span>
 <span class="text-candy-pink font-black text-xl">✦</span>
 <span class="inline-flex items-center gap-2 bg-candy-cyan/30 px-3 py-1 rounded-full candy-border shadow-[2px_2px_0px_#2e1a28] rotate-[1deg]">
-          🖌️ 100% TACTILE HANDS-ON • 0% DIGITAL SCREENS
+          100% TACTILE HANDS-ON • 0% DIGITAL SCREENS
         </span>
 <span class="text-candy-purple font-black text-xl">✦</span>
 <span class="inline-flex items-center gap-2 bg-candy-lime/30 px-3 py-1 rounded-full candy-border shadow-[2px_2px_0px_#2e1a28] rotate-[-1deg]">
-          🥁 Pottery Wheels Spinnin’ to Cajón Rhythms right now!
+          Pottery Wheels Spinnin’ to Cajón Rhythms right now!
         </span>
 <span class="text-candy-yellow font-black text-xl">✦</span>
 <span class="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full candy-border shadow-[2px_2px_0px_#2e1a28] rotate-[2deg]">
-          🌈 Ages 4 to 99 — Everyone is an Artist!
+          Ages 4 to 99 — Everyone is an Artist!
+        </span>
+</div>
+<div class="flex items-center gap-8 py-1 pr-8" aria-hidden="true">
+<span class="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full candy-border shadow-[2px_2px_0px_#2e1a28] rotate-[-2deg]">
+<span class="w-3 h-3 rounded-full bg-candy-pink animate-ping"></span> LIVE STUDIO BEAT: Ukuleles &amp; Neon Fingerpaint In Session!
+        </span>
+<span class="text-candy-pink font-black text-xl">✦</span>
+<span class="inline-flex items-center gap-2 bg-candy-cyan/30 px-3 py-1 rounded-full candy-border shadow-[2px_2px_0px_#2e1a28] rotate-[1deg]">
+          100% TACTILE HANDS-ON • 0% DIGITAL SCREENS
+        </span>
+<span class="text-candy-purple font-black text-xl">✦</span>
+<span class="inline-flex items-center gap-2 bg-candy-lime/30 px-3 py-1 rounded-full candy-border shadow-[2px_2px_0px_#2e1a28] rotate-[-1deg]">
+          Pottery Wheels Spinnin’ to Cajón Rhythms right now!
+        </span>
+<span class="text-candy-yellow font-black text-xl">✦</span>
+<span class="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full candy-border shadow-[2px_2px_0px_#2e1a28] rotate-[2deg]">
+          Ages 4 to 99 — Everyone is an Artist!
         </span>
 </div>
 </div>
@@ -160,12 +210,11 @@
 <div class="lg:col-span-6 flex flex-col items-start z-10">
 <!-- Top Sticker Badge with EKG Pin -->
 <div class="inline-flex items-center gap-2.5 bg-candy-yellow px-4 py-2 rounded-2xl candy-border shadow-candy rotate-[-2deg] mb-5 hover:rotate-0 transition-transform">
-<span class="text-xl">🎨⚡️🎸</span>
 <span class="font-headline font-black text-xs sm:text-sm uppercase tracking-wide text-on-surface">The Acoustic &amp; Messy Art Haven!</span>
 </div>
 <!-- Main Pop Title -->
 <h1 class="text-4xl sm:text-6xl xl:text-7xl font-headline font-black text-on-surface leading-[1.08] mb-6">
-            Where <span class="inline-block bg-candy-pink text-white px-3 py-1 rounded-3xl rotate-[-2deg] candy-border shadow-candy">Paint</span> Splatters Meet <span class="inline-block text-candy-cyan wavy-underline decoration-candy-yellow">Pure Rhythm!</span> 🌈
+            Where <span class="inline-block bg-candy-pink text-white px-3 py-1 rounded-3xl rotate-[-2deg] candy-border shadow-candy">Paint</span> Splatters Meet <span class="inline-block text-candy-cyan wavy-underline decoration-candy-yellow">Pure Rhythm!</span>
           </h1>
 <p class="text-base sm:text-xl font-body font-medium text-on-surface-variant leading-relaxed max-w-xl mb-8">
             We are a passionate art and music studio where creativity comes to life. Learn and explore a wide range of art forms, including oil painting, pencil shading, sketching, acrylic painting, and more. For music enthusiasts, we offer lessons in piano, guitar, singing, and tabla, suitable for beginners as well as those looking to develop and refine their skills. Whether you're discovering your passion or looking to take your creativity to the next level, our studio provides a welcoming and inspiring space to learn, create, and express yourself.
@@ -174,7 +223,6 @@
 <div class="flex flex-wrap items-center gap-4 w-full">
 <a class="px-8 py-4 rounded-full bg-candy-pink text-white font-headline font-black text-base candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1.5 active:translate-y-0.5 hover:bg-[#ff2f9c] transition-all flex items-center gap-3 group" href="#creative-jams">
 <span class="">Grab a Paintbrush &amp; Strum!</span>
-<span class="text-2xl group-hover:scale-125 group-hover:rotate-12 transition-transform">🚀</span>
 </a>
 <a class="px-6 py-4 rounded-full bg-candy-lime text-on-surface font-headline font-black text-sm candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 active:translate-y-0.5 hover:bg-[#1cf29e] transition-all flex items-center gap-2" href="#interactive-synth">
 <span class="material-symbols-outlined text-lg">music_note</span>
@@ -188,22 +236,22 @@
 <span class="">Parent &amp; Kid Approved</span>
 </div>
 <div class="bg-candy-cyan/30 px-3.5 py-1.5 rounded-full candy-border shadow-[3px_3px_0px_#2e1a28] text-xs font-headline font-bold flex items-center gap-1.5 rotate-[2deg]">
-<span class="">🧼 Washable Non-Toxic Pigments</span>
+<span class="">Washable Non-Toxic Pigments</span>
 </div>
 <div class="bg-candy-purple text-white px-3.5 py-1.5 rounded-full candy-border shadow-[3px_3px_0px_#2e1a28] text-xs font-headline font-bold flex items-center gap-1.5 rotate-[-2deg]">
-<span class="">🎶 All Real Wood &amp; Strings</span>
+<span class="">All Real Wood &amp; Strings</span>
 </div>
 </div>
 </div>
 <!-- Hero Right Column: Overlapping Candy Collage with Brand Logo & Photos -->
 <div class="lg:col-span-6 relative flex flex-col items-center justify-center min-h-[480px]">
 <!-- Prominent Floating Brand Logo Sticker -->
-<div class="absolute -top-10 -right-2 sm:right-6 z-30 animate-bounce-slow"><div class="relative bg-white p-2.5 rounded-3xl candy-border shadow-candy-lg rotate-3 hover:rotate-0 transition-transform cursor-pointer"><img alt="ART BEAT Official Mural Emblem Badge" class="w-36 h-20 sm:w-44 sm:h-24 object-cover rounded-2xl candy-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8lekHIdNnX1sKAUcCIRcQx38tAmFyX-1gLYqwkA4a8mrDB_9EVIYvT73QgyIKymQV_zDZnD1LLsNthzghJt5mdUFk816blaxXqER7IBU7n-YhE55HfUJbovPrwV9kcHLbb46ux10kOJ6MhbjwjOMj7Ki7b8ZOAAWO7lC9EFt9o-pf2io4xWY6RfCQzTru5Oi2jdHzvXxGlkrmPmgcH1ZZ79xUG0LdKOwAGgJ8LRH6nt99rawmB8fexQh4GQfIw15BQr8"><div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-candy-yellow text-on-surface px-3 py-1 rounded-full text-[11px] font-headline font-black candy-border shadow-[2px_2px_0px_#2e1a28] whitespace-nowrap">❤️ Official Studio Beat</div></div></div>
+<div class="absolute -top-10 -right-2 sm:right-6 z-30 animate-bounce-slow"><div class="relative bg-white p-2.5 rounded-3xl candy-border shadow-candy-lg rotate-3 hover:rotate-0 transition-transform cursor-pointer"><img alt="ART BEAT Official Mural Emblem Badge" class="w-36 h-20 sm:w-44 sm:h-24 object-cover rounded-2xl candy-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8lekHIdNnX1sKAUcCIRcQx38tAmFyX-1gLYqwkA4a8mrDB_9EVIYvT73QgyIKymQV_zDZnD1LLsNthzghJt5mdUFk816blaxXqER7IBU7n-YhE55HfUJbovPrwV9kcHLbb46ux10kOJ6MhbjwjOMj7Ki7b8ZOAAWO7lC9EFt9o-pf2io4xWY6RfCQzTru5Oi2jdHzvXxGlkrmPmgcH1ZZ79xUG0LdKOwAGgJ8LRH6nt99rawmB8fexQh4GQfIw15BQr8"><div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-candy-yellow text-on-surface px-3 py-1 rounded-full text-[11px] font-headline font-black candy-border shadow-[2px_2px_0px_#2e1a28] whitespace-nowrap">Official Studio Beat</div></div></div>
 <!-- Tilted Framed Photography #1: Joyful Kids in Studio (https://lh3.googleusercontent.com/aida-public/AB6AXuBX4SwR39cAlYz_zgUypLW5ewlWKNjt225v3rffu-fQn2GsUuvZrcnqvsdkTUSLinVdv_Z9r4CGa6h8cgLIAn-mYyjYvzyoMEEzzOP11Atd6O_HBmpnuoGX4RqS1Ral2bRHZSN3b2-5Zk2mOOkKybBmAPOrV6kY0HcMMpI_mfYJtdreCkcSxvUzCb3BrvBpE3k0IsPC5C4wpn69YQK5kVbZDazam0qHajGehhyw0UBWCc-W_bhYBasEsQ) -->
 <div class="relative w-full max-w-md bg-white p-3 rounded-3xl candy-border shadow-candy-lg rotate-[-2.5deg] hover:rotate-0 transition-all duration-300 z-10">
 <!-- Wavy Confetti Header Ribbon -->
 <div class="absolute -top-4 left-6 bg-candy-cyan text-white px-4 py-1 rounded-full font-headline font-bold text-xs candy-border shadow-[2px_2px_0px_#2e1a28] flex items-center gap-1">
-<span class="">🥁 LIVE STUDIO FREEDOM</span>
+<span class="">LIVE STUDIO FREEDOM</span>
 </div>
 <div class="rounded-2xl overflow-hidden aspect-[4/3] bg-candy-yellow/20">
 <img alt="Indian kids and teenagers painting colorful canvases on easels with acoustic instruments" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyw4IHbc-HpO3t6ANqBsMWTCY-EaT0W6WDsgLPHBQqgv1BCAaiQsReV39LwplBdSfRhkIr0XCbuxkYueRB0pFZGzPTdR5XHO05iKb1QYixKjWI7fnUvRFf5QnrtGs3AFVXuRJMQVbRGiSs01uV66UE6IhWSCSMxq-Lc6VBW4MK8NHDAWxVHBFcG81MuGxGQ7NUETOmXd-ejWBefxAgLaSRQap4EFq9mtFAuxy3hhCTlhsKzDRkRDyLiw">
@@ -220,9 +268,8 @@
 </div>
 <div class="pt-2 px-1 flex items-center justify-between">
 <span class="text-[11px] font-headline font-black text-candy-purple flex items-center gap-1">
-<span class="">🪕 Ukulele + Kalimba + Gouache</span>
+<span class="">Ukulele + Kalimba + Gouache</span>
 </span>
-<span class="text-xs">✨</span>
 </div>
 </div>
 </div>
@@ -238,7 +285,7 @@
               Pick Your Playground Track
             </span>
 <h2 class="text-3xl sm:text-5xl font-headline font-black text-on-surface tracking-tight">
-              Choose Your Creative Jam! 🎨🪘
+              Choose Your Creative Jam!
             </h2>
 </div>
 <p class="text-base text-on-surface-variant max-w-md font-body font-medium">
@@ -254,7 +301,7 @@
             </div>
 <div>
 <div class="w-16 h-16 rounded-2xl bg-candy-pink text-white flex items-center justify-center text-3xl candy-border shadow-[3px_3px_0px_#2e1a28] mb-6 group-hover:scale-110 transition-transform">
-                🖐️
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1.6a2.4 2.4 0 0 0 1.7-4.1 2.4 2.4 0 0 1 1.7-4.1H19A3 3 0 0 0 22 9.8 9 9 0 0 0 12 3z"/><circle cx="7.5" cy="10.5" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16.5" cy="10.5" r="1"/></svg>
               </div>
 <h3 class="text-2xl font-headline font-black text-on-surface mb-2">The Creative Art Studio</h3>
 <p class="text-sm font-body text-on-surface-variant leading-relaxed mb-6">
@@ -268,18 +315,18 @@
 <span class="bg-white px-3 py-1 rounded-xl text-xs font-headline font-bold text-on-surface candy-border">Sketching</span>
 </div>
 </div>
-<a class="w-full py-3 rounded-2xl bg-candy-pink text-white text-center font-headline font-black text-sm candy-border shadow-[3px_3px_0px_#2e1a28] hover:bg-[#ff2f9c] transition-colors" href="#trial">
+<a class="w-full py-3 rounded-2xl bg-candy-pink text-white text-center font-headline font-black text-sm candy-border shadow-[3px_3px_0px_#2e1a28] hover:bg-[#ff2f9c] transition-colors" href="#competition">
               Explore Art Classes →
             </a>
 </div>
-<!-- Card 2: The Acoustic Beat Box -->
+<!-- Card 2: The Music Academy -->
 <div class="bg-[#f0f9ff] rounded-[2.5rem] p-7 candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-2 hover:rotate-[1deg] transition-all flex flex-col justify-between relative group">
 <div class="absolute -top-5 right-6 bg-candy-cyan text-on-surface px-4 py-1 rounded-full font-headline font-black text-xs candy-border shadow-[2px_2px_0px_#2e1a28] -rotate-2">
               Beginner Friendly!
             </div>
 <div>
 <div class="w-16 h-16 rounded-2xl bg-candy-cyan text-on-surface flex items-center justify-center text-3xl candy-border shadow-[3px_3px_0px_#2e1a28] mb-6 group-hover:scale-110 transition-transform">
-                🪕
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8" aria-hidden="true"><circle cx="6" cy="18" r="2.6"/><circle cx="16" cy="16" r="2.6"/><path d="M8.6 18V6.5l10-2.2V16"/></svg>
               </div>
 <h3 class="text-2xl font-headline font-black text-on-surface mb-2">The Music Academy</h3>
 <p class="text-sm font-body text-on-surface-variant leading-relaxed mb-6">
@@ -293,18 +340,18 @@
 <span class="bg-white px-3 py-1 rounded-xl text-xs font-headline font-bold text-on-surface candy-border">Singing Lessons</span>
 </div>
 </div>
-<a class="w-full py-3 rounded-2xl bg-candy-cyan text-on-surface text-center font-headline font-black text-sm candy-border shadow-[3px_3px_0px_#2e1a28] hover:bg-[#38d4ff] transition-colors" href="#trial">
+<a class="w-full py-3 rounded-2xl bg-candy-cyan text-on-surface text-center font-headline font-black text-sm candy-border shadow-[3px_3px_0px_#2e1a28] hover:bg-[#38d4ff] transition-colors" href="#competition">
               Explore Music Classes →
             </a>
 </div>
 <!-- Card 3: The Sonic Paint Jam (Crossover) -->
 <div class="bg-[#fcf8e3] rounded-[2.5rem] p-7 candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-2 hover:rotate-[-1.5deg] transition-all flex flex-col justify-between relative group">
 <div class="absolute -top-5 right-6 bg-candy-yellow text-on-surface px-4 py-1 rounded-full font-headline font-black text-xs candy-border shadow-[2px_2px_0px_#2e1a28] rotate-2">
-              ⭐ Studio Signature
+              Studio Signature
             </div>
 <div>
 <div class="w-16 h-16 rounded-2xl bg-candy-yellow text-on-surface flex items-center justify-center text-3xl candy-border shadow-[3px_3px_0px_#2e1a28] mb-6 group-hover:scale-110 transition-transform">
-                ⚡️
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg>
               </div>
 <h3 class="text-2xl font-headline font-black text-on-surface mb-2">Art & Music Fusion</h3>
 <p class="text-sm font-body text-on-surface-variant leading-relaxed mb-6">
@@ -318,7 +365,7 @@
 <span class="bg-white px-3 py-1 rounded-xl text-xs font-headline font-bold text-on-surface candy-border">Family Packages</span>
 </div>
 </div>
-<a class="w-full py-3 rounded-2xl bg-candy-yellow text-on-surface text-center font-headline font-black text-sm candy-border shadow-[3px_3px_0px_#2e1a28] hover:bg-[#ffe033] transition-colors" href="#trial">
+<a class="w-full py-3 rounded-2xl bg-candy-yellow text-on-surface text-center font-headline font-black text-sm candy-border shadow-[3px_3px_0px_#2e1a28] hover:bg-[#ffe033] transition-colors" href="#competition">
               Book Combined Classes →
             </a>
 </div>
@@ -331,7 +378,7 @@
 <div class="max-w-5xl mx-auto bg-white rounded-[3rem] candy-border shadow-candy-lg p-6 sm:p-10 relative">
 <div class="text-center max-w-xl mx-auto mb-8">
 <div class="inline-flex items-center gap-2 bg-candy-lime px-4 py-1 rounded-full text-xs font-headline font-black candy-border shadow-[2px_2px_0px_#2e1a28] mb-2 rotate-[-1deg]">
-<span class="">🎵 INTERACTIVE MUSIC DEMO</span>
+<span class="">INTERACTIVE MUSIC DEMO</span>
 </div>
 <h2 class="text-2xl sm:text-4xl font-headline font-black text-on-surface">
             Explore Our Music Lessons!
@@ -343,7 +390,6 @@
 <!-- Toy Canvas Screen -->
 <div class="w-full h-44 rounded-3xl bg-[#2e1a28] p-4 flex flex-col items-center justify-center relative overflow-hidden candy-border shadow-inner transition-colors duration-300" id="canvas-visualizer">
 <div class="text-center transition-all transform duration-200" id="splatter-display">
-<span class="text-4xl block animate-bounce">🎨✨</span>
 <p class="text-white font-headline font-bold text-base mt-2" id="splatter-text">
               Tap any button below to Jam!
             </p>
@@ -357,26 +403,26 @@
 </div>
 <!-- Clickable Note Buttons & Splatters -->
 <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-<button class="p-4 rounded-2xl bg-candy-yellow candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 active:translate-y-0.5 transition-all text-left flex flex-col justify-between" onclick="playStudioSound('C - Sunny Yellow', '#ffd000', '☀️ Piano Key in C Major!', '🎹 DING!')">
+<button class="p-4 rounded-2xl bg-candy-yellow candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 active:translate-y-0.5 transition-all text-left flex flex-col justify-between" onclick="playStudioSound('C - Sunny Yellow', '#ffd000', 'Piano Key in C Major!', 'DING!')">
 <span class="font-headline font-black text-lg text-on-surface">Piano: C</span>
-<span class="text-xs font-bold text-on-surface/80">Sunny Yellow 🟡</span>
+<span class="text-xs font-bold text-on-surface/80">Sunny Yellow</span>
 </button>
-<button class="p-4 rounded-2xl bg-candy-cyan candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 active:translate-y-0.5 transition-all text-left flex flex-col justify-between" onclick="playStudioSound('G - Sky Blue', '#00c2ff', '🌊 Piano Key Ripple in G Major!', '🎹 PLINK!')">
+<button class="p-4 rounded-2xl bg-candy-cyan candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 active:translate-y-0.5 transition-all text-left flex flex-col justify-between" onclick="playStudioSound('G - Sky Blue', '#00c2ff', 'Piano Key Ripple in G Major!', 'PLINK!')">
 <span class="font-headline font-black text-lg text-on-surface">Piano: G</span>
-<span class="text-xs font-bold text-on-surface/80">Sky Cyan Splat 🔵</span>
+<span class="text-xs font-bold text-on-surface/80">Sky Cyan Splat</span>
 </button>
-<button class="p-4 rounded-2xl bg-candy-pink candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 active:translate-y-0.5 transition-all text-left flex flex-col justify-between text-white" onclick="playStudioSound('Am - Wild Magenta', '#e040a0', '💖 Guitar Chord in A Minor!', '🎸 STRUM!')">
+<button class="p-4 rounded-2xl bg-candy-pink candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 active:translate-y-0.5 transition-all text-left flex flex-col justify-between text-white" onclick="playStudioSound('Am - Wild Magenta', '#e040a0', 'Guitar Chord in A Minor!', 'STRUM!')">
 <span class="font-headline font-black text-lg">Guitar: Am</span>
-<span class="text-xs font-bold text-white/90">Neon Magenta 🟣</span>
+<span class="text-xs font-bold text-white/90">Neon Magenta</span>
 </button>
-<button class="p-4 rounded-2xl bg-candy-lime candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 active:translate-y-0.5 transition-all text-left flex flex-col justify-between" onclick="playStudioSound('F - Lime Tabla', '#10e28f', '🍃 Tabla Beat in F Groove!', '🥁 THUMP!')">
+<button class="p-4 rounded-2xl bg-candy-lime candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 active:translate-y-0.5 transition-all text-left flex flex-col justify-between" onclick="playStudioSound('F - Lime Tabla', '#10e28f', 'Tabla Beat in F Groove!', 'THUMP!')">
 <span class="font-headline font-black text-lg text-on-surface">Tabla: F Beat</span>
-<span class="text-xs font-bold text-on-surface/80">Lime Rhythm 🟢</span>
+<span class="text-xs font-bold text-on-surface/80">Lime Rhythm</span>
 </button>
 </div>
 <div class="mt-4 flex items-center justify-between text-xs font-headline font-bold text-on-surface-variant">
-<span class="">🔊 Demo sounds powered by Web Audio API</span>
-<span class="text-candy-pink">Visit us for live lessons! 🎶</span>
+<span class="">Demo sounds powered by Web Audio API</span>
+<span class="text-candy-pink">Visit us for live lessons!</span>
 </div>
 </div>
 </section>
@@ -410,17 +456,16 @@
 </div>
 </div>
 <div class="pt-4">
-<a class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-candy-purple text-white font-headline font-black text-sm candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 transition-all" href="#trial">
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-candy-purple text-white font-headline font-black text-sm candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 transition-all" href="#competition">
 <span class="">Book a Studio Visit</span>
 <span class="material-symbols-outlined text-sm">east</span>
 </a>
 </div>
 </div>
-<!-- Authentic Photo #4: The Full Art & Music Studio in Action (https://lh3.googleusercontent.com/aida/AEtjO1WnOSCEjTdP3oLEIFivL8AWyHrqjhxNz5nQpJdbBmed4wI132hcufFyvnxvNuT-5zUQHDwRLkaXAkKMFkUq3ogl63rgcL2i_0ptHFe7wVgjz07EqpOXxZMZGte0DsAuH7OOBhjD1DWdoZDk6Ki3cKgnCTuNfEHd5pNYv6QxskWf5qUB8Gk6mR0DZj2Yf4-DQ4RMDXJgDV-DL8-NMHv0jsKfbycekvVo9N8_5KALM6dBkV6PTOgGNTL_r-Dr) -->
 <div class="lg:col-span-7 relative">
 <div class="relative bg-white p-3 rounded-3xl candy-border shadow-candy rotate-[1.5deg] hover:rotate-0 transition-transform">
 <div class="rounded-2xl overflow-hidden aspect-[16/10]">
-<img alt="Vibrant ART BEAT community art and music loft with piano, guitar, paintbrushes, and joyful learners" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WnOSCEjTdP3oLEIFivL8AWyHrqjhxNz5nQpJdbBmed4wI132hcufFyvnxvNuT-5zUQHDwRLkaXAkKMFkUq3ogl63rgcL2i_0ptHFe7wVgjz07EqpOXxZMZGte0DsAuH7OOBhjD1DWdoZDk6Ki3cKgnCTuNfEHd5pNYv6QxskWf5qUB8Gk6mR0DZj2Yf4-DQ4RMDXJgDV-DL8-NMHv0jsKfbycekvVo9N8_5KALM6dBkV6PTOgGNTL_r-Dr">
+<img alt="Instruments and art materials in action during an ART BEAT session" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3gBcT-bK02kKk-oY2qgj6U7sxkfmf3t0MF26FroQD1g2UZ8Al9KQ1FOvrGXeIlSW47GY8Nz3d9YWuRyOXsLDudbfjpuST22jT-IeDmMtd5tZdRU9SnGo1IlxXJfzekm_Q_Ok3jZTuwKQz0QBSdRBla9p_64uxmsuZTjFMN1rrmdFLB8pdeqk74X3TmNxyJOOgpO92CTvghqyfLvYZy5NIg_F7jAWAUJek3w-lu2bZy9UVyvIqgq2HBg">
 </div>
 <div class="pt-3 px-1 flex items-center justify-between">
 <span class="text-xs font-headline font-bold text-on-surface">Real Life at ART BEAT • Saturday Morning Community Open Studio</span>
@@ -440,140 +485,87 @@
             Not Boring Instructors!
           </span>
 <h2 class="text-3xl sm:text-5xl font-headline font-black text-on-surface tracking-tight">
-            Meet the Studio Dreamers 🌟
+            Meet the Studio Dreamers
           </h2>
 <p class="text-sm sm:text-base text-on-surface-variant font-body mt-2">
             Warm practicing artists, folk musicians, and gigging players who encourage wild imagination, colorful blunders, and rhythmic spontaneity!
           </p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Dreamer 1 -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Team member 1 -->
 <div class="bg-white rounded-3xl p-6 candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-2 hover:rotate-[-1.5deg] transition-all flex flex-col justify-between">
 <div>
-<div class="relative w-full h-60 rounded-2xl overflow-hidden mb-4 candy-border bg-candy-yellow/20">
-<img alt="Marcus Vance portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD96T4M6JyPdzUTyk1LWfT0vpuz2-zyihvPXwDss3MdXvXbBpykXupM5rAuQAsmDO7mM7ah7nzaRUtgQtMaLeGXjmSj_0X7zPg-d2xQFyNBq91p5oJGYYf19PfXvz8DeLdANWzlMWOBd4GCUcRZfVIfXsZ8MwGbXTAIFjnk4Q-HZiLKoEsETCeG1Bg-E_bX4637mmy2Ue2HoI7czENaG2DO3eG1k1gl2okTz3bKrqOV7c7NQ5xdH-SBjQ">
+<div class="relative w-full h-60 rounded-2xl overflow-hidden mb-4 candy-border bg-candy-yellow/20 flex items-center justify-center">
+<span class="font-headline font-black text-7xl text-candy-pink/70 select-none">S</span>
 <div class="absolute bottom-3 left-3 bg-candy-yellow text-on-surface px-3 py-1 rounded-full text-xs font-headline font-black candy-border shadow-[2px_2px_0px_#2e1a28]">
-                  🎸 Ukulele &amp; Huge Murals
+                  Founder
                 </div>
 </div>
-<h3 class="text-xl font-headline font-black text-on-surface">Marcus "Groove" Vance</h3>
-<p class="text-xs font-headline font-bold text-candy-pink uppercase tracking-wide mb-3">Music Instructor</p>
+<h3 class="text-xl font-headline font-black text-on-surface">Shefali</h3>
+<p class="text-xs font-headline font-bold text-candy-pink uppercase tracking-wide mb-3">Founder · Art</p>
 <p class="text-sm font-body text-on-surface-variant leading-relaxed mb-4">
-                "Music is for everyone! Whether you're picking up a guitar for the first time or refining your tabla technique, we create a judgment-free space to grow."
+                Founder of ART BEAT, and part of the art faculty.
               </p>
 </div>
 <div class="pt-3 border-t-2 border-dashed border-candy-yellow flex items-center justify-between text-xs font-headline font-bold">
-<span class="">Superpower: Guitar & Tabla</span>
-<span class="text-base">✨🎨</span>
+<span class="">Art</span>
 </div>
 </div>
 <!-- Dreamer 2 -->
 <div class="bg-white rounded-3xl p-6 candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-2 hover:rotate-[1deg] transition-all flex flex-col justify-between">
 <div>
-<div class="relative w-full h-60 rounded-2xl overflow-hidden mb-4 candy-border bg-candy-cyan/20">
-<img alt="Elena Rostova portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTywpiUUqJcmZFwlpCVgRX4wrql_qT3zrNBhwI6gCjekSof6IRuvTzIJLkA9F7Of-B6bCndn2FW4dAlisIAw1SkLAmqJfX3EsRR1JRVxhopeg8I5ckmQUllGx30mme8fVHak0FjDoBLtdTr3DY8iJTSMdcMbSz7dkOW5qZEB0Iub_3xSMBotmCH3qUQEYhf83oQloZiLon9SRZQHZ9GhyO2Wo84kx6nLgiXqcUJJAJVUl1i2GT-Ucsmg">
+<div class="relative w-full h-60 rounded-2xl overflow-hidden mb-4 candy-border bg-candy-cyan/20 flex items-center justify-center">
+<span class="font-headline font-black text-7xl text-candy-cyan/70 select-none">A</span>
 <div class="absolute bottom-3 left-3 bg-candy-cyan text-on-surface px-3 py-1 rounded-full text-xs font-headline font-black candy-border shadow-[2px_2px_0px_#2e1a28]">
-                  🎹 Piano Wizard &amp; Watercolors
+                  Art
                 </div>
 </div>
-<h3 class="text-xl font-headline font-black text-on-surface">Elena Rostova</h3>
+<h3 class="text-xl font-headline font-black text-on-surface">Ankit</h3>
 <p class="text-xs font-headline font-bold text-candy-cyan uppercase tracking-wide mb-3">Art Instructor</p>
 <p class="text-sm font-body text-on-surface-variant leading-relaxed mb-4">
-                "Art is about expression, not perfection! From oil painting to pencil shading, we help you discover your unique style and build confidence in your creativity."
+                Part of the art faculty at ART BEAT.
               </p>
 </div>
 <div class="pt-3 border-t-2 border-dashed border-candy-cyan flex items-center justify-between text-xs font-headline font-bold">
-<span class="">Superpower: Oil & Sketching</span>
-<span class="text-base">🌊🎹</span>
+<span class="">Art</span>
 </div>
 </div>
-<!-- Dreamer 3 -->
+<!-- Team member 3 -->
 <div class="bg-white rounded-3xl p-6 candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-2 hover:rotate-[-1deg] transition-all flex flex-col justify-between">
 <div>
-<div class="relative w-full h-60 rounded-2xl overflow-hidden mb-4 candy-border bg-candy-lime/20">
-<img alt="Maya Chen portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCdzCooVWNcy-zAp7_3qKj4UpDcy9nNgn8d8mkTU4AQTu07Orhspk7tCmHZsDK7kzTlo1-DBGokJ0eCnpFSHMBE6u1xWVRrUT1o0sSizpkY0vKRZ9xz4wOLy1heKNWvjaMznCEKXC_0matVr6fR3VDJle6IPrs31aJhFit7vnR9HZkb75-_XmnbEqoUCmMnnK5Jvf_YoKoIrYOW1hfJzChXkZRNdOcS7NrpsZW_SrPsRixSBkoowJV6A">
+<div class="relative w-full h-60 rounded-2xl overflow-hidden mb-4 candy-border bg-candy-lime/20 flex items-center justify-center">
+<span class="font-headline font-black text-7xl text-candy-lime/70 select-none">A</span>
 <div class="absolute bottom-3 left-3 bg-candy-lime text-on-surface px-3 py-1 rounded-full text-xs font-headline font-black candy-border shadow-[2px_2px_0px_#2e1a28]">
-                  🏺 Wheel Pottery &amp; Cajón Beats
+                  Music
                 </div>
 </div>
-<h3 class="text-xl font-headline font-black text-on-surface">Maya Chen</h3>
-<p class="text-xs font-headline font-bold text-candy-lime uppercase tracking-wide mb-3">Vocal & Music Guide</p>
+<h3 class="text-xl font-headline font-black text-on-surface">Ayush</h3>
+<p class="text-xs font-headline font-bold text-candy-lime uppercase tracking-wide mb-3">Music Instructor</p>
 <p class="text-sm font-body text-on-surface-variant leading-relaxed mb-4">
-                "Singing is therapy and joy! I help students build confidence, improve technique, and discover their unique voice - from beginners to advanced learners."
+                Part of the music faculty at ART BEAT.
               </p>
 </div>
 <div class="pt-3 border-t-2 border-dashed border-candy-lime flex items-center justify-between text-xs font-headline font-bold">
-<span class="">Superpower: Singing & Piano</span>
-<span class="text-base">�🎵</span>
+<span class="">Music</span>
 </div>
 </div>
-</div>
-</div>
-</section>
-<!-- SECTION 6: WHY KIDS & FAMILIES GO BANANAS FOR ART BEAT (STICKER REVIEWS) -->
-<section class="w-full px-4 sm:px-8 lg:px-12 py-16 bg-[#fffbf0] border-y-4 border-[#2e1a28]">
-<div class="max-w-7xl mx-auto">
-<div class="text-center max-w-2xl mx-auto mb-12">
-<span class="inline-block bg-candy-yellow text-on-surface px-3 py-1 rounded-full font-headline font-black text-xs candy-border shadow-[2px_2px_0px_#2e1a28] rotate-2 mb-2">
-            🍌 100% Unfiltered Reviews
-          </span>
-<h2 class="text-3xl sm:text-5xl font-headline font-black text-on-surface tracking-tight">
-            Why Kids &amp; Families Go Bananas!
-          </h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Sticker Review 1 -->
-<div class="bg-white rounded-3xl p-6 candy-border shadow-candy rotate-[-2deg] hover:rotate-0 transition-transform">
-<div class="flex items-center gap-1 text-candy-yellow text-xl mb-3">
-              ★★★★★
-            </div>
-<p class="font-body font-bold text-on-surface text-sm leading-relaxed mb-4">
-              "My child discovers new passions every day! From learning to paint to playing guitar, the instructors are patient and encouraging. Highly recommend!"
-            </p>
-<div class="flex items-center gap-3 pt-3 border-t-2 border-[#2e1a28]/10">
-<div class="w-10 h-10 rounded-full bg-candy-pink text-white font-headline font-black flex items-center justify-center text-sm candy-border">
-                JM
-              </div>
+<!-- Team member 4 -->
+<div class="bg-white rounded-3xl p-6 candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-2 hover:rotate-[1.5deg] transition-all flex flex-col justify-between">
 <div>
-<h4 class="font-headline font-black text-xs text-on-surface">Jessica M. (Mom of 2)</h4>
-<p class="text-[11px] text-on-surface-variant font-medium">Art & Painting Student</p>
+<div class="relative w-full h-60 rounded-2xl overflow-hidden mb-4 candy-border bg-candy-purple/20 flex items-center justify-center">
+<span class="font-headline font-black text-7xl text-candy-purple/70 select-none">R</span>
+<div class="absolute bottom-3 left-3 bg-candy-purple text-white px-3 py-1 rounded-full text-xs font-headline font-black candy-border shadow-[2px_2px_0px_#2e1a28]">
+                  Music
+                </div>
 </div>
+<h3 class="text-xl font-headline font-black text-on-surface">Rishabh</h3>
+<p class="text-xs font-headline font-bold text-candy-purple uppercase tracking-wide mb-3">Music Instructor</p>
+<p class="text-sm font-body text-on-surface-variant leading-relaxed mb-4">
+                Part of the music faculty at ART BEAT.
+              </p>
 </div>
-</div>
-<!-- Sticker Review 2 -->
-<div class="bg-white rounded-3xl p-6 candy-border shadow-candy rotate-[2deg] hover:rotate-0 transition-transform">
-<div class="flex items-center gap-1 text-candy-pink text-xl mb-3">
-              ★★★★★
-            </div>
-<p class="font-body font-bold text-on-surface text-sm leading-relaxed mb-4">
-              "I was nervous about taking music lessons but the instructors made me feel welcome. I've learned so much on guitar and tabla, and it's actually fun!"
-            </p>
-<div class="flex items-center gap-3 pt-3 border-t-2 border-[#2e1a28]/10">
-<div class="w-10 h-10 rounded-full bg-candy-cyan text-on-surface font-headline font-black flex items-center justify-center text-sm candy-border">
-                LT
-              </div>
-<div>
-<h4 class="font-headline font-black text-xs text-on-surface">Leo T., Age 13</h4>
-<p class="text-[11px] text-on-surface-variant font-medium">Teen Beat Box Explorer</p>
-</div>
-</div>
-</div>
-<!-- Sticker Review 3 -->
-<div class="bg-white rounded-3xl p-6 candy-border shadow-candy rotate-[-1.5deg] hover:rotate-0 transition-transform">
-<div class="flex items-center gap-1 text-candy-lime text-xl mb-3">
-              ★★★★★
-            </div>
-<p class="font-body font-bold text-on-surface text-sm leading-relaxed mb-4">
-              "We love bringing the whole family. Kids love art class, parents enjoy learning guitar or piano. It's a space where everyone feels creative and happy."
-            </p>
-<div class="flex items-center gap-3 pt-3 border-t-2 border-[#2e1a28]/10">
-<div class="w-10 h-10 rounded-full bg-candy-yellow text-on-surface font-headline font-black flex items-center justify-center text-sm candy-border">
-                DF
-              </div>
-<div>
-<h4 class="font-headline font-black text-xs text-on-surface">The D'Souza Family</h4>
-<p class="text-[11px] text-on-surface-variant font-medium">Sunday Open Stage Members</p>
-</div>
+<div class="pt-3 border-t-2 border-dashed border-candy-purple flex items-center justify-between text-xs font-headline font-bold">
+<span class="">Music</span>
 </div>
 </div>
 </div>
@@ -589,7 +581,7 @@
                 Weekly Lineup
               </span>
 <h2 class="text-2xl sm:text-4xl font-headline font-black text-on-surface">
-                Schedule of Chaos &amp; Creation 📅
+                Schedule of Chaos &amp; Creation
               </h2>
 </div>
 <span class="px-4 py-2 rounded-full bg-white font-headline font-bold text-xs text-candy-purple candy-border shadow-[2px_2px_0px_#2e1a28]">
@@ -649,33 +641,125 @@
 </div>
 </div>
 </section>
-<!-- SECTION 8: INTERACTIVE BOOKING / FREE TRIAL INVITATION -->
-<section class="w-full px-4 sm:px-8 lg:px-12 py-16 pb-24 bg-[#fff9fc]" id="trial">
+<!-- SECTION: FAQ (mirrors the FAQPage structured data above) -->
+<section class="w-full px-4 sm:px-8 lg:px-12 py-16 bg-[#faf3fc]" id="faq">
+<div class="max-w-4xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-10">
+<span class="inline-block bg-candy-purple text-white px-3 py-1 rounded-full font-headline font-black text-xs candy-border shadow-[2px_2px_0px_#2e1a28] rotate-[-1deg] mb-2">
+              Good to Know
+            </span>
+<h2 class="text-3xl sm:text-5xl font-headline font-black text-on-surface tracking-tight">
+              Questions, Answered
+            </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<details class="bg-white rounded-3xl p-5 candy-border shadow-candy group">
+<summary class="font-headline font-black text-on-surface text-base cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center justify-between gap-3">Where is the studio?<span class="text-candy-pink text-2xl leading-none group-open:rotate-45 transition-transform">+</span></summary>
+<p class="text-sm font-body text-on-surface-variant leading-relaxed mt-3">Eldeco Saubhagyam Club House, Sector 9, Vrindavan Colony (near LPS School), Lucknow 226029. <a class="text-candy-pink font-bold hover:underline" href="https://www.google.com/maps/search/?api=1&amp;query=Eldeco%20Saubhagyam%20Club%20Sector%209%20Vrindavan%20Colony%20Lucknow%20226029" target="_blank" rel="noopener">Get directions</a></p>
+</details>
+<details class="bg-white rounded-3xl p-5 candy-border shadow-candy group">
+<summary class="font-headline font-black text-on-surface text-base cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center justify-between gap-3">What are the hours?<span class="text-candy-pink text-2xl leading-none group-open:rotate-45 transition-transform">+</span></summary>
+<p class="text-sm font-body text-on-surface-variant leading-relaxed mt-3">Monday–Saturday 10 AM–8 PM, Sunday 10 AM–6 PM. Classes run on alternate days per batch — with multiple batches, the studio is open every day.</p>
+</details>
+<details class="bg-white rounded-3xl p-5 candy-border shadow-candy group">
+<summary class="font-headline font-black text-on-surface text-base cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center justify-between gap-3">What can I learn?<span class="text-candy-pink text-2xl leading-none group-open:rotate-45 transition-transform">+</span></summary>
+<p class="text-sm font-body text-on-surface-variant leading-relaxed mt-3">Art: oil, acrylic, pencil shading, sketching. Music: piano, guitar, tabla, singing. Dance: group classes and individual coaching. All ages and levels, beginner to advanced.</p>
+</details>
+<details class="bg-white rounded-3xl p-5 candy-border shadow-candy group">
+<summary class="font-headline font-black text-on-surface text-base cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center justify-between gap-3">Who teaches here?<span class="text-candy-pink text-2xl leading-none group-open:rotate-45 transition-transform">+</span></summary>
+<p class="text-sm font-body text-on-surface-variant leading-relaxed mt-3">Shefali (founder) and Ankit teach art. Ayush and Rishabh teach music.</p>
+</details>
+<details class="bg-white rounded-3xl p-5 candy-border shadow-candy group">
+<summary class="font-headline font-black text-on-surface text-base cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center justify-between gap-3">Tell me about the competition<span class="text-candy-pink text-2xl leading-none group-open:rotate-45 transition-transform">+</span></summary>
+<p class="text-sm font-body text-on-surface-variant leading-relaxed mt-3">The ART BEAT Open Competition runs 2 October from 11:00 AM at Eldeco Saubhagyam Club — art, music and dance, open to all ages and levels. <a class="text-candy-pink font-bold hover:underline" href="#competition">Details and registration</a></p>
+</details>
+<details class="bg-white rounded-3xl p-5 candy-border shadow-candy group">
+<summary class="font-headline font-black text-on-surface text-base cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center justify-between gap-3">How do I join or ask something?<span class="text-candy-pink text-2xl leading-none group-open:rotate-45 transition-transform">+</span></summary>
+<p class="text-sm font-body text-on-surface-variant leading-relaxed mt-3">Use the query form below, WhatsApp or call <a class="text-candy-pink font-bold hover:underline" href="https://wa.me/919336333394">+91 93363 33394</a>, or email <a class="text-candy-pink font-bold hover:underline" href="mailto:artbeat.labs@gmail.com">artbeat.labs@gmail.com</a>.</p>
+</details>
+</div>
+</div>
+</section>
+<!-- SECTION 8: OPEN COMPETITION — 2 OCTOBER + ENQUIRY FORM -->
+<section class="w-full px-4 sm:px-8 lg:px-12 py-16 pb-24 bg-[#fff9fc]" id="competition">
 <div class="max-w-5xl mx-auto rounded-[3.5rem] bg-gradient-to-br from-candy-pink via-[#ff5ea8] to-candy-purple p-8 sm:p-14 text-center text-white relative overflow-hidden candy-border shadow-candy-lg">
 <!-- Large White Floating Logo in Background -->
 <div class="absolute -right-10 -bottom-10 opacity-15 pointer-events-none w-80 h-80">
 <img alt="ART BEAT watermarked emblem" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtBB5tzaCpxUmWdOxQuzitfWljn2Tb46NDv4WBIDcMFH2gqqsvCTsMaluVCxppeuJNjvRp-NNFZtzaPkphTTP46n2HmhH8UEeUIba7661jCrr2_Ef48JVU1U9LCkEp6TeXIFTCZzW_-1kPXJUdRHprJ1sbaogy3lDoZo-Tev3qEgkuVAXqEva_JsvTKxr0IY_hneSqdmkqyFQgS_jLndEzBauvS2WnkNGepaIu2fuevo9_9HiEZHU8Zw">
 </div>
-<div class="relative z-10 flex flex-col items-center max-w-2xl mx-auto">
+<div class="relative z-10 flex flex-col items-center max-w-3xl mx-auto">
 <span class="px-4 py-1.5 rounded-full bg-candy-yellow text-on-surface font-headline font-black text-xs uppercase tracking-wider mb-4 candy-border shadow-[2px_2px_0px_#2e1a28] rotate-[-2deg]">
-            🎉 Jump Into The Splatter!
+            Upcoming Event
           </span>
 <h2 class="text-3xl sm:text-5xl font-headline font-black tracking-tight mb-4">
-            Claim Your Free Studio Jam Pass!
+            ART BEAT Open Competition
           </h2>
 <p class="text-base sm:text-lg font-body font-medium text-white/95 mb-8 leading-relaxed">
-            Come get paint on your nose and guitar picks in your pocket. Aprons, instruments, canvases, and lots of giggles are included. Zero pressure, pure play!
+            An open competition in art, music and dance — open to all ages and levels. Bring your artwork, your instrument or your performance.
           </p>
-<!-- Input Group -->
-<form class="w-full flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md" onsubmit="event.preventDefault(); alert('🎉 Woohoo! Your Free Pass is reserved! We will see you at ART BEAT Studio!');">
-<input class="w-full px-6 py-4 rounded-full bg-white text-on-surface placeholder:text-on-surface/50 font-body text-sm candy-border shadow-inner focus:outline-none focus:ring-4 focus:ring-candy-yellow" placeholder="Enter parent or creator email..." required="" type="email">
-<button class="w-full sm:w-auto px-8 py-4 rounded-full bg-candy-yellow text-on-surface font-headline font-black text-sm tracking-wide shrink-0 candy-border shadow-candy hover:shadow-candy-lg hover:scale-105 active:scale-95 transition-all" type="submit">
-              Claim Free Pass!
-            </button>
+<!-- Event facts -->
+<div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+<div class="bg-white rounded-2xl p-4 candy-border shadow-candy text-center">
+<p class="text-[11px] font-headline font-black uppercase tracking-wider text-candy-pink mb-1">Date</p>
+<p class="font-headline font-black text-lg text-on-surface">2 October</p>
+</div>
+<div class="bg-white rounded-2xl p-4 candy-border shadow-candy text-center">
+<p class="text-[11px] font-headline font-black uppercase tracking-wider text-candy-pink mb-1">Time</p>
+<p class="font-headline font-black text-lg text-on-surface">From 11:00 AM</p>
+</div>
+<div class="bg-white rounded-2xl p-4 candy-border shadow-candy text-center">
+<p class="text-[11px] font-headline font-black uppercase tracking-wider text-candy-pink mb-1">Venue</p>
+<p class="font-headline font-black text-lg text-on-surface">Eldeco Saubhagyam Club</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+<a class="px-6 py-3 rounded-full bg-candy-yellow text-on-surface font-headline font-black text-sm candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 transition-all" href="https://wa.me/919336333394?text=Hello%20ART%20BEAT%2C%20I%20would%20like%20details%20about%20the%202%20October%20competition.">Register on WhatsApp</a>
+<a class="px-6 py-3 rounded-full bg-white text-on-surface font-headline font-black text-sm candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 transition-all" href="mailto:artbeat.labs@gmail.com?subject=ART%20BEAT%20Open%20Competition">Email for details</a>
+<a class="px-6 py-3 rounded-full bg-white text-on-surface font-headline font-black text-sm candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 transition-all" href="https://www.google.com/maps/search/?api=1&amp;query=Eldeco%20Saubhagyam%20Club%20Sector%209%20Vrindavan%20Colony%20Lucknow%20226029" target="_blank" rel="noopener">Get Directions</a>
+</div>
+<!-- Enquiry form -->
+<div class="w-full bg-white rounded-3xl p-5 sm:p-7 candy-border shadow-candy text-left">
+<p class="font-headline font-black text-lg text-on-surface mb-1">Send us a query</p>
+<p class="text-xs font-body text-on-surface-variant mb-5">Ask about classes or the competition — we will get back to you.</p>
+<form class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="enquiry-form" action="https://api.web3forms.com/submit" method="POST">
+<!-- Web3Forms access key. Public key; safe in client-side code. -->
+<input type="hidden" name="access_key" value="8d6be639-11a8-4c6a-a902-ff6bb2753b52">
+<input type="hidden" name="subject" value="New query from the ART BEAT website">
+<input type="hidden" name="from_name" value="ART BEAT Website">
+<input class="hidden" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="flex flex-col gap-1.5">
+<label class="text-[11px] font-headline font-black uppercase tracking-wider text-on-surface-variant" for="q-name">Name</label>
+<input class="w-full px-4 py-3 rounded-2xl bg-[#fff9fc] text-on-surface placeholder:text-on-surface/40 font-body text-sm candy-border focus:outline-none focus:ring-4 focus:ring-candy-yellow" id="q-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-[11px] font-headline font-black uppercase tracking-wider text-on-surface-variant" for="q-email">Email</label>
+<input class="w-full px-4 py-3 rounded-2xl bg-[#fff9fc] text-on-surface placeholder:text-on-surface/40 font-body text-sm candy-border focus:outline-none focus:ring-4 focus:ring-candy-yellow" id="q-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-[11px] font-headline font-black uppercase tracking-wider text-on-surface-variant" for="q-phone">Phone (optional)</label>
+<input class="w-full px-4 py-3 rounded-2xl bg-[#fff9fc] text-on-surface placeholder:text-on-surface/40 font-body text-sm candy-border focus:outline-none focus:ring-4 focus:ring-candy-yellow" id="q-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 ...">
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-[11px] font-headline font-black uppercase tracking-wider text-on-surface-variant" for="q-interest">Interested in</label>
+<select class="w-full px-4 py-3 rounded-2xl bg-[#fff9fc] text-on-surface font-body text-sm candy-border focus:outline-none focus:ring-4 focus:ring-candy-yellow" id="q-interest" name="interest" required>
+<option value="">Choose one...</option>
+<option>Art</option>
+<option>Music</option>
+<option>Dance</option>
+<option>2 October competition</option>
+<option>Something else</option>
+</select>
+</div>
+<div class="sm:col-span-2 flex flex-col gap-1.5">
+<label class="text-[11px] font-headline font-black uppercase tracking-wider text-on-surface-variant" for="q-message">Message</label>
+<textarea class="w-full px-4 py-3 rounded-2xl bg-[#fff9fc] text-on-surface placeholder:text-on-surface/40 font-body text-sm candy-border focus:outline-none focus:ring-4 focus:ring-candy-yellow" id="q-message" name="message" rows="4" placeholder="How can we help?" required></textarea>
+</div>
+<div class="sm:col-span-2 flex flex-wrap items-center gap-3">
+<button class="px-6 py-3 rounded-full bg-candy-pink text-white font-headline font-black text-sm candy-border shadow-candy hover:shadow-candy-lg hover:-translate-y-1 active:translate-y-0.5 transition-all" type="submit">Send query</button>
+<p class="text-xs font-headline font-bold text-on-surface-variant" id="form-status" role="status" aria-live="polite"></p>
+</div>
 </form>
-<p class="text-xs text-white/90 font-headline font-bold mt-4">
-            ✨ No experience needed • All ages welcome • Beginner to advanced
-          </p>
+</div>
 </div>
 </div>
 </section>
@@ -703,27 +787,23 @@
 <div class="space-y-2.5">
 <h4 class="font-headline font-black text-sm text-candy-purple uppercase tracking-wider">Studio Hours</h4>
 <ul class="text-xs font-headline font-bold text-on-surface-variant space-y-1.5">
-<li class="flex justify-between"><span class="">Monday – Friday:</span><span class="">10:00 AM – 8:00 PM</span></li>
-<li class="flex justify-between"><span class="">Saturday:</span><span class="">9:00 AM – 6:00 PM</span></li>
-<li class="flex justify-between"><span class="">Sunday:</span><span class="">1:00 PM – 6:00 PM</span></li>
-<li class="flex justify-between"><span class="">Closed Mondays:</span><span class="">Open other days</span></li>
+<li class="flex justify-between"><span class="">Monday – Saturday:</span><span class="">10:00 AM – 8:00 PM</span></li>
+<li class="flex justify-between"><span class="">Sunday:</span><span class="">10:00 AM – 6:00 PM</span></li>
 </ul>
+<p class="text-[11px] font-body text-on-surface-variant pt-1 leading-relaxed">Classes run on alternate days per batch — with multiple batches, the studio is open every day.</p>
 </div>
 <!-- Col 3: Studio Clubhouse -->
 <div class="space-y-2.5">
 <h4 class="font-headline font-black text-sm text-candy-cyan uppercase tracking-wider">Studio Clubhouse</h4>
 <div class="text-xs font-body text-on-surface-variant space-y-1.5">
 <p class="flex items-start gap-1.5">
-<span class="text-base">📍</span>
-<span class="">428 Bohemian Melody Lane, Arts Loft Suite 100</span>
+<a class="hover:text-candy-pink transition-colors" href="https://www.google.com/maps/search/?api=1&amp;query=Eldeco%20Saubhagyam%20Club%20Sector%209%20Vrindavan%20Colony%20Lucknow%20226029" target="_blank" rel="noopener">Eldeco Saubhagyam Club House, Sector 9, Vrindavan Colony, Lucknow, Uttar Pradesh 226029 (near LPS School)</a>
 </p>
 <p class="flex items-center gap-1.5">
-<span class="text-base">📞</span>
 <a href="https://wa.me/919336333394?text=Hello%2C%20I%20have%20a%20query" class="hover:text-candy-pink transition-colors">(+91) 93363 33394</a>
 </p>
 <p class="flex items-center gap-1.5">
-<span class="text-base">💌</span>
-<span class="">hello@artbeatstudio.com</span>
+<a href="mailto:artbeat.labs@gmail.com" class="hover:text-candy-pink transition-colors">artbeat.labs@gmail.com</a>
 </p>
 </div>
 </div>
@@ -732,20 +812,14 @@
 <h4 class="font-headline font-black text-sm text-candy-yellow uppercase tracking-wider">Connect With Us</h4>
 <p class="text-xs font-body text-on-surface-variant">Follow our journey and see student creations:</p>
 <div class="flex items-center gap-2 pt-2">
-<a class="w-9 h-9 rounded-full bg-candy-purple text-white flex items-center justify-center candy-border shadow-[2px_2px_0px_#2e1a28] hover:scale-110 transition-transform" href="https://share.google/zshLwqHcgw2Avpy48" title="Visit Google Business Profile">📋</a>
-<a class="w-9 h-9 rounded-full bg-candy-pink text-white flex items-center justify-center candy-border shadow-[2px_2px_0px_#2e1a28] hover:scale-110 transition-transform" href="#">📸</a>
-<a class="w-9 h-9 rounded-full bg-candy-cyan text-on-surface flex items-center justify-center candy-border shadow-[2px_2px_0px_#2e1a28] hover:scale-110 transition-transform" href="#">🎵</a>
-<a class="w-9 h-9 rounded-full bg-candy-yellow text-on-surface flex items-center justify-center candy-border shadow-[2px_2px_0px_#2e1a28] hover:scale-110 transition-transform" href="#">▶️</a>
-<a class="w-9 h-9 rounded-full bg-candy-lime text-on-surface flex items-center justify-center candy-border shadow-[2px_2px_0px_#2e1a28] hover:scale-110 transition-transform" href="#">💬</a>
+<a class="w-9 h-9 rounded-full bg-candy-purple text-white flex items-center justify-center candy-border shadow-[2px_2px_0px_#2e1a28] hover:scale-110 transition-transform" href="https://share.google/zshLwqHcgw2Avpy48" title="Google Business Profile" aria-label="Google Business Profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-4 h-4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></a>
+<a class="w-9 h-9 rounded-full bg-candy-pink text-white flex items-center justify-center candy-border shadow-[2px_2px_0px_#2e1a28] hover:scale-110 transition-transform" href="https://wa.me/919336333394?text=Hello%2C%20I%20have%20a%20query" title="WhatsApp" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-4 h-4" aria-hidden="true"><path d="M21 12a8 8 0 0 1-8 8H8l-5 3 1.5-4.5A8 8 0 1 1 21 12z"/></svg></a>
+<a class="w-9 h-9 rounded-full bg-candy-cyan text-on-surface flex items-center justify-center candy-border shadow-[2px_2px_0px_#2e1a28] hover:scale-110 transition-transform" href="mailto:artbeat.labs@gmail.com" title="Email" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-4 h-4" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
 </div>
 </div>
 </div>
 <div class="pt-6 border-t-2 border-dashed border-[#2e1a28]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-headline font-bold text-on-surface-variant">
-<p class="">© 2025 ART BEAT Creative Studio. Inspiring artists and musicians of all ages.</p>
-<div class="flex items-center gap-4">
-<a class="hover:text-candy-pink" href="#">Studio Safety &amp; Non-Toxic Pledge</a>
-<a class="hover:text-candy-pink" href="#">Kid &amp; Teen Jam Rules</a>
-</div>
+<p class="">© 2026 ART BEAT Creative Studio. Inspiring artists, musicians and dancers of all ages.</p>
 </div>
 </div>
 </footer>
@@ -800,6 +874,188 @@
       }
     }
   </script>
+<!-- NAVIGATION: MOBILE MENU TOGGLE + ACTIVE SECTION HIGHLIGHT -->
+<script>
+    (function () {
+      var toggle = document.getElementById('menu-toggle');
+      var menu = document.getElementById('mobile-menu');
+      if (toggle && menu) {
+        var setOpen = function (open) {
+          menu.classList.toggle('hidden', !open);
+          menu.classList.toggle('flex', open);
+          toggle.setAttribute('aria-expanded', String(open));
+          var icon = toggle.querySelector('.material-symbols-outlined');
+          if (icon) icon.textContent = open ? 'close' : 'menu';
+        };
+        toggle.addEventListener('click', function () {
+          setOpen(menu.classList.contains('hidden'));
+        });
+        menu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () { setOpen(false); });
+        });
+        window.addEventListener('resize', function () {
+          if (window.innerWidth >= 1024) setOpen(false);
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') setOpen(false);
+        });
+      }
 
-
+      var links = Array.prototype.slice.call(document.querySelectorAll('nav a[href^="#"]'));
+      var sections = Array.prototype.slice.call(document.querySelectorAll('section[id]'));
+      if ('IntersectionObserver' in window && sections.length) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = '#' + entry.target.id;
+            links.forEach(function (link) {
+              var active = link.getAttribute('href') === id;
+              link.classList.toggle('is-active', active);
+              if (active) link.setAttribute('aria-current', 'true');
+              else link.removeAttribute('aria-current');
+            });
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        sections.forEach(function (s) { observer.observe(s); });
+      }
+    })();
+  </script>
+<!-- LOCAL BUSINESS STRUCTURED DATA (helps Google show address, hours, phone) -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ART BEAT",
+      "description": "Art, music and dance studio in Lucknow. Painting, sketching, piano, guitar, tabla, singing and dance classes for all ages and levels.",
+      "email": "artbeat.labs@gmail.com",
+      "telephone": "+91 93363 33394",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Eldeco Saubhagyam Club House, Sector 9, Vrindavan Colony (near LPS School)",
+        "addressLocality": "Lucknow",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "226029",
+        "addressCountry": "IN"
+      },
+      "openingHours": [
+        "Mo-Sa 10:00-20:00",
+        "Su 10:00-18:00"
+      ],
+      "sameAs": ["https://share.google/zshLwqHcgw2Avpy48"],
+      "url": "https://artbeat-labs.github.io/ArtBeat/",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA3gBcT-bK02kKk-oY2qgj6U7sxkfmf3t0MF26FroQD1g2UZ8Al9KQ1FOvrGXeIlSW47GY8Nz3d9YWuRyOXsLDudbfjpuST22jT-IeDmMtd5tZdRU9SnGo1IlxXJfzekm_Q_Ok3jZTuwKQz0QBSdRBla9p_64uxmsuZTjFMN1rrmdFLB8pdeqk74X3TmNxyJOOgpO92CTvghqyfLvYZy5NIg_F7jAWAUJek3w-lu2bZy9UVyvIqgq2HBg",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Eldeco%20Saubhagyam%20Club%20Sector%209%20Vrindavan%20Colony%20Lucknow%20226029"
+    }
+  </script>
+<!-- EVENT STRUCTURED DATA (lets Google show the competition as an event result) -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "ART BEAT Open Competition",
+      "description": "An open competition in art, music and dance at ART BEAT, open to all ages and levels.",
+      "startDate": "2026-10-02T11:00:00+05:30",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Eldeco Saubhagyam Club",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Sector 9, Vrindavan Colony (near LPS School)",
+          "addressLocality": "Lucknow",
+          "addressRegion": "Uttar Pradesh",
+          "postalCode": "226029",
+          "addressCountry": "IN"
+        }
+      },
+      "image": ["https://lh3.googleusercontent.com/aida-public/AB6AXuA3gBcT-bK02kKk-oY2qgj6U7sxkfmf3t0MF26FroQD1g2UZ8Al9KQ1FOvrGXeIlSW47GY8Nz3d9YWuRyOXsLDudbfjpuST22jT-IeDmMtd5tZdRU9SnGo1IlxXJfzekm_Q_Ok3jZTuwKQz0QBSdRBla9p_64uxmsuZTjFMN1rrmdFLB8pdeqk74X3TmNxyJOOgpO92CTvghqyfLvYZy5NIg_F7jAWAUJek3w-lu2bZy9UVyvIqgq2HBg"],
+      "organizer": {
+        "@type": "Organization",
+        "name": "ART BEAT",
+        "url": "https://artbeat-labs.github.io/ArtBeat/"
+      }
+    }
+  </script>
+<!-- FAQ STRUCTURED DATA (lets Google and AI assistants answer questions about the studio) -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is ART BEAT located?",
+          "acceptedAnswer": { "@type": "Answer", "text": "ART BEAT is at Eldeco Saubhagyam Club House, Sector 9, Vrindavan Colony (near LPS School), Lucknow, Uttar Pradesh 226029, India." }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the studio hours?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Monday to Saturday 10:00 AM to 8:00 PM, Sunday 10:00 AM to 6:00 PM. Classes run on alternate days per batch, and with multiple batches the studio is open every day." }
+        },
+        {
+          "@type": "Question",
+          "name": "What classes does ART BEAT offer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Art: oil painting, acrylic painting, pencil shading and sketching. Music: piano, guitar, tabla and singing. Dance: group classes and individual coaching. All ages and levels, beginner to advanced." }
+        },
+        {
+          "@type": "Question",
+          "name": "Who teaches at ART BEAT?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Shefali is the founder and teaches art. Ankit is the other art instructor. Ayush and Rishabh teach music." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there an upcoming event or competition?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The ART BEAT Open Competition, an open art, music and dance competition for all ages and levels, is on 2 October from 11:00 AM at Eldeco Saubhagyam Club. Register on WhatsApp or by email." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I contact ART BEAT?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Send the query form on this website, WhatsApp or call +91 93363 33394, or email artbeat.labs@gmail.com." }
+        }
+      ]
+    }
+  </script>
+<!-- ENQUIRY FORM SUBMISSION (Web3Forms — no backend, no page reload) -->
+<script>
+    (function () {
+      var form = document.getElementById('enquiry-form');
+      if (!form) return;
+      var status = document.getElementById('form-status');
+      var setStatus = function (msg, ok) {
+        status.textContent = msg;
+        status.className = 'text-xs font-headline font-bold ' + (ok ? 'text-on-surface' : 'text-candy-pink');
+      };
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        var btn = form.querySelector('button[type="submit"]');
+        var label = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        setStatus('', true);
+        fetch(form.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form)
+        })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (data && data.success) {
+              form.reset();
+              setStatus('Thank you — your query has been sent. We will get back to you shortly.', true);
+            } else {
+              throw new Error('failed');
+            }
+          })
+          .catch(function () {
+            setStatus('Sorry, that did not send. Please message us on WhatsApp or email artbeat.labs@gmail.com.', false);
+          })
+          .then(function () {
+            btn.disabled = false;
+            btn.textContent = label;
+          });
+      });
+    })();
+  </script>
 </body></html>
