@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="ART BEAT emblem">
+  <rect x="7" y="7" width="186" height="186" rx="46" fill="#e040a0" stroke="#2e1a28" stroke-width="10"/>
+  <g fill="#ffd000">
+    <circle cx="100" cy="100" r="46"/>
+    <circle cx="62" cy="70" r="18"/>
+    <circle cx="143" cy="132" r="15"/>
+    <circle cx="146" cy="66" r="12"/>
+    <circle cx="60" cy="138" r="11"/>
+  </g>
+  <g fill="#2e1a28">
+    <ellipse cx="88" cy="126" rx="15" ry="12" transform="rotate(-18 88 126)"/>
+    <ellipse cx="128" cy="126" rx="15" ry="12" transform="rotate(-18 128 126)"/>
+    <rect x="94" y="72" width="9" height="54" rx="4.5"/>
+    <rect x="134" y="72" width="9" height="54" rx="4.5"/>
+    <rect x="94" y="70" width="49" height="10" rx="5"/>
+  </g>
+</svg>
