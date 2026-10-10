@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://artbeat-labs.github.io/ArtBeat/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/logo.jpeg</image:loc>
+      <image:title>ART BEAT — art, music and dance studio logo, Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/artwork-01.jpeg</image:loc>
+      <image:title>Original oil painting created at ART BEAT studio, Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/artwork-05.jpeg</image:loc>
+      <image:title>Student artwork from ART BEAT art classes in Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/instructor-shefali.jpeg</image:loc>
+      <image:title>Shefali, founder and art instructor at ART BEAT, Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/instructor-ayush.jpeg</image:loc>
+      <image:title>Ayush, music instructor at ART BEAT, Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/competition-kids-group.jpeg</image:loc>
+      <image:title>Kids at ART BEAT opening day art competition, Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/dance-garba-poster.jpeg</image:loc>
+      <image:title>Dance and Garba class at ART BEAT studio, Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/music-tabla-harmonium-poster.jpeg</image:loc>
+      <image:title>Tabla and harmonium classes at ART BEAT, Lucknow</image:title>
+    </image:image>
   </url>
 </urlset>

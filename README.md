@@ -30,7 +30,7 @@ Fully static — publish with GitHub Pages (Settings → Pages → deploy from t
   - `competition-judging.mp4`, `competition-drawing-1..3.mp4` (+ posters) — competition-day clips
   - `instructor-shefali.jpeg` / `instructor-shefali.mp4` (+ poster) — Shefali's card photo and clip
   - `instructor-ayush.jpeg` / `instructor-ayush.mp4` (+ poster) — Ayush Kumar's card photo and clip
-  - `logo.svg` — the emblem for the header, footer, watermark and favicon
+  - `logo.jpeg` — the original studio emblem for the header, footer, watermark, favicon and social share cards
   - `design/DESIGN.md` — the "Candy" design language
 - **`assets/newfiles/`** — the raw media drop this content came from. It is now
   redundant (the videos are duplicated by the compressed `assets/*.mp4` files)
