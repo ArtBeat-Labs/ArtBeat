@@ -7,7 +7,14 @@
     "build": "tailwindcss -i ./src/input.css -o ./assets/site.css --minify",
     "dev": "tailwindcss -i ./src/input.css -o ./assets/site.css --watch",
     "og": "\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --hide-scrollbars --force-device-scale-factor=1 --virtual-time-budget=5000 --window-size=1200,630 --screenshot=/tmp/artbeat-og.png file://$PWD/src/og-image.html && sips -s format jpeg -s formatOptions 88 /tmp/artbeat-og.png --out assets/og-image.jpg",
-    "serve": "python3 -m http.server 8000"
+    "serve": "python3 -m http.server 8000",
+    "domain": "node scripts/set-domain.mjs",
+    "domain:check": "node scripts/set-domain.mjs check",
+    "domain:github": "node scripts/set-domain.mjs github",
+    "domain:euorg": "node scripts/set-domain.mjs euorg",
+    "cname": "node scripts/cname.mjs",
+    "cname:on": "node scripts/cname.mjs on",
+    "cname:off": "node scripts/cname.mjs off"
   },
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",

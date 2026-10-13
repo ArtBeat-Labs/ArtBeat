@@ -62,6 +62,51 @@ npm run og         # screenshots src/og-image.html -> assets/og-image.jpg
 - **`llms.txt`** — machine-readable studio facts for AI assistants and answer engines
 - **`README.md`** — this file
 
+### Custom domain — `artbeat.eu.org` (optional, off by default)
+
+The site runs on the free `artbeat-labs.github.io/ArtBeat/` address. A free
+`artbeat.eu.org` domain is registered with CloudNS and awaiting eu.org approval,
+but **it is deliberately not switched on yet**. There is no `CNAME` file in the
+repo, which is exactly what keeps the site on the github.io address.
+
+Two independent switches:
+
+| Command | Effect |
+| --- | --- |
+| `npm run cname` | report whether the custom domain is on or off |
+| `npm run domain:check` | report which base URL the files currently use, and fail if they mix both |
+
+**Do not run `npm run cname:on` until eu.org approves the domain and DNS resolves.**
+Check first:
+```bash
+dig +short artbeat.eu.org          # must return 185.199.108-111.153
+```
+While a `CNAME` file exists GitHub Pages serves **only** at the custom domain.
+Pointing it at a domain that does not yet resolve takes the live site offline.
+
+### Going live, once eu.org approves
+
+1. Confirm `dig +short artbeat.eu.org` returns GitHub's Pages IPs.
+2. `npm run domain:euorg` — rewrites all 112 absolute URLs (canonical tags, Open
+   Graph, JSON-LD, `sitemap.xml`, `robots.txt`, `llms.txt`) from
+   `https://artbeat-labs.github.io/ArtBeat/` to `https://artbeat.eu.org/`.
+   Note the address becomes `/` and not `/ArtBeat/` — a custom domain serves the
+   repo at the domain root.
+3. `npm run build` — regenerate the CSS.
+4. `npm run cname:on` — write the `CNAME` file and commit everything.
+5. GitHub Pages will reprovision and issue TLS, up to ~1 hour. Watch the build.
+6. In Search Console: add the new domain as a property, verify ownership, submit
+   `https://artbeat.eu.org/sitemap.xml`, and request indexing on all four URLs.
+7. `npm run domain:check` to confirm nothing was missed.
+
+To undo at any point: `npm run cname:off` (back to github.io), and
+`npm run domain:github` to restore the URLs. Both are idempotent.
+
+**Switching costs you rankings.** Nothing transfers between
+`artbeat-labs.github.io` and `artbeat.eu.org` — Google treats them as unrelated
+sites. Only do this while the site is still young, or once the new domain has
+been running for long enough to build its own signals.
+
 ## SEO & structured data
 
 **Home page** (`index.html`) ships three JSON-LD blocks: `WebSite`, `LocalBusiness`
