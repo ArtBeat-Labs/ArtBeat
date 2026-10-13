@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-padding-top: 7rem;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+}
+
+.wavy-underline {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 8px;
+}
+.candy-border {
+  border: 3.5px solid #2e1a28;
+}
+.candy-border-white {
+  border: 4px solid #ffffff;
+}
+
+@keyframes heartbeatLine {
+  0% {
+    stroke-dashoffset: 600;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.animate-ekg {
+  stroke-dasharray: 600;
+  animation: heartbeatLine 3.5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .animate-ping,
+  .animate-float,
+  .animate-bounce-slow,
+  .animate-pulse-fast,
+  .animate-ekg {
+    animation: none;
+  }
+}

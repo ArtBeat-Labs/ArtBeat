@@ -1,8 +1,8 @@
 # ART BEAT — Art, Music &amp; Dance Studio
 
-A static website for ART BEAT, built as a single self-contained HTML file
-(handwritten Tailwind config plus a small amount of CSS and JavaScript).
-No build step, no framework, no backend.
+A static website for ART BEAT: four hand-written HTML pages, a precompiled
+Tailwind stylesheet, and the studio's own media. No framework, no backend.
+There *is* a small build step that compiles the CSS (see **Build** below).
 
 ## Getting started
 
@@ -11,16 +11,37 @@ Open `index.html` directly in a browser.
 
 ### With a local server
 ```bash
-python3 -m http.server 8000
+npm run serve      # python3 -m http.server 8000
 ```
-Then visit `http://localhost:8000`.
 
-### Deploy
-Fully static — publish with GitHub Pages (Settings → Pages → deploy from the
-`main` branch, root folder).
+### Build the CSS
+```bash
+npm install        # once
+npm run build      # writes assets/site.css
+npm run dev        # same, but watches for changes
+```
+
+Tailwind is compiled ahead of time into `assets/site.css` and **committed**, so
+GitHub Pages keeps serving from the `main` branch exactly as before — no workflow
+or Pages setting needs changing. Re-run `npm run build` after editing any page,
+otherwise new Tailwind classes will not exist in the stylesheet.
+
+### Regenerate the social share card
+```bash
+npm run og         # screenshots src/og-image.html -> assets/og-image.jpg
+```
 
 ## Project structure
-- **`index.html`** — the entire site (markup, config, styles and scripts inline)
+- **`index.html`** — the home page (markup, styles link and scripts inline)
+- **`art-classes.html`**, **`music-classes.html`**, **`dance-classes.html`** —
+  dedicated landing pages, one per subject, each targeting its own search terms
+- **`src/input.css`** — Tailwind source (base layer + the custom `.candy-*` classes)
+- **`tailwind.config.js`** — theme, animations, plugins. `content` is `./*.html`,
+  so every page at the repo root is scanned. `safelist` covers classes that are
+  added by JavaScript at runtime (e.g. `scale-110`)
+- **`assets/site.css`** — the compiled, minified stylesheet (generated, committed)
+- **`assets/og-image.jpg`** — 1200×630 link-preview card (generated, committed)
+- **`src/og-image.html`** — the template `npm run og` renders the card from
 - **`assets/`** — the studio's own media (everything local, no external image hosts):
   - `artwork-01.jpeg` … `artwork-12.jpeg` — paintings shown in the gallery and hero
   - `poster-zumba-bollywood.jpeg` — the Zumba & Bollywood poster
@@ -42,11 +63,42 @@ Fully static — publish with GitHub Pages (Settings → Pages → deploy from t
 - **`README.md`** — this file
 
 ## SEO & structured data
-The page ships with three JSON-LD blocks — `LocalBusiness` (address, hours,
-phone, map), `Event` (the opening day, 2 October) and `FAQPage` (six common
-questions, mirrored by the on-page FAQ section) — plus canonical and Open Graph
-tags. Validate after deploying at https://search.google.com/test/rich-results
-and request indexing in Google Search Console.
+
+**Home page** (`index.html`) ships three JSON-LD blocks: `WebSite`, `LocalBusiness`
+and `FAQPage`, plus canonical and Open Graph tags.
+
+**Each service page** ships one `@graph` containing `BreadcrumbList`,
+`LocalBusiness` (referenced by `@id` so all four pages describe the same
+business), `Course` and `FAQPage`.
+
+Validate after deploying at https://search.google.com/test/rich-results and
+request indexing in Google Search Console — submit all four URLs, then
+**Inspection → Request indexing** on each.
+
+### Things that need manual upkeep
+
+- **`aggregateRating`** — the `reviewCount` / `ratingCount` in the `LocalBusiness`
+  block must equal the real number of Google reviews on the Business Profile.
+  It is a structured-data policy violation to inflate or mismatch it. Bump it
+  whenever a new review lands, and remove the whole block if you ever lose them.
+- **Business Profile link** — in `index.html` and the three service pages, plus
+  `llms.txt`. Currently `https://share.google/7Q5gz8OokWLPI5ir9`.
+- **New pages** — add them to `sitemap.xml` and cross-link them in each other and
+  from the footer, or Google will not connect them to the rest of the site.
+
+### Why the service pages exist
+
+A single page competing for "painting", "piano", "tabla" and "Zumba" gets its
+confidence split four ways. One page per subject lets each one win its own
+cluster. They are deliberately plain and text-heavy for that reason.
+
+### What is *not* here, and why
+- **No `Event` structured data.** The 2 October 2026 opening day is in the past,
+  and Google issues no event rich result for past events — while marking one
+  `EventScheduled` would be factually wrong. Add a fresh `Event` block with a
+  future `startDate` when you announce the next competition.
+- **No `Review` markup, no invented prices.** Fees, batch sizes and demo-class
+  policy are deliberately routed to WhatsApp rather than guessed on the page.
 
 ## Sections
 - Sticky header with nav, mobile menu and an active-section highlight
@@ -99,10 +151,6 @@ Direct contact is also available:
   real clip and photo when they arrive.
 - **Competition details** — categories, age groups, entry fee, rules and
   registration deadline are not yet on the site.
-- **`Event` structured data** — it now describes the past opening day
-  (2 October). Past events generally do not earn Google's event rich result, so
-  either remove that JSON-LD block or repoint it at the next event once you
-  announce one.
 - **Video encoding** — all clips are H.264 (CRF 27, AAC 96 kbps, `+faststart`),
   except `competition-drawing-3.mp4` which needed CRF 31 because its source was
   already heavily compressed. Everything loads only on play, so the page itself

@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://artbeat-labs.github.io/ArtBeat/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -37,6 +37,84 @@
     <image:image>
       <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/music-tabla-harmonium-poster.jpeg</image:loc>
       <image:title>Tabla and harmonium classes at ART BEAT, Lucknow</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://artbeat-labs.github.io/ArtBeat/art-classes.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/artwork-01.jpeg</image:loc>
+      <image:title>Oil painting by an ART BEAT student in Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/artwork-02.jpeg</image:loc>
+      <image:title>Acrylic painting from ART BEAT art classes in Vrindavan Colony</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/artwork-03.jpeg</image:loc>
+      <image:title>Student artwork from ART BEAT painting classes in Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/artwork-05.jpeg</image:loc>
+      <image:title>Canvas painting by an adult student at ART BEAT studio Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/instructor-shefali.jpeg</image:loc>
+      <image:title>Shefali, founder and art instructor at ART BEAT Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/competition-kid-painting.jpeg</image:loc>
+      <image:title>Children painting at an ART BEAT art class in Lucknow</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://artbeat-labs.github.io/ArtBeat/music-classes.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/music-guitar-poster.jpeg</image:loc>
+      <image:title>Guitar lesson at ART BEAT music classes in Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/music-tabla-harmonium-poster.jpeg</image:loc>
+      <image:title>Tabla and harmonium lesson at ART BEAT studio in Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/instructor-ayush.jpeg</image:loc>
+      <image:title>Ayush Kumar, music instructor at ART BEAT Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/competition-young-talent.jpeg</image:loc>
+      <image:title>Young musician performing at the ART BEAT competition in Lucknow</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://artbeat-labs.github.io/ArtBeat/dance-classes.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/dance-garba-poster.jpeg</image:loc>
+      <image:title>Garba dance class at ART BEAT studio in Vrindavan Colony, Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/poster-zumba-bollywood.jpeg</image:loc>
+      <image:title>Zumba and Bollywood dance classes in Lucknow at ART BEAT</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/dance-1-poster.jpeg</image:loc>
+      <image:title>Bollywood dance performance by ART BEAT students in Lucknow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/dance-3-poster.jpeg</image:loc>
+      <image:title>Kids dance class at ART BEAT, Vrindavan Colony</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://artbeat-labs.github.io/ArtBeat/assets/dance-4-poster.jpeg</image:loc>
+      <image:title>Young dancers performing at ART BEAT Lucknow</image:title>
     </image:image>
   </url>
 </urlset>

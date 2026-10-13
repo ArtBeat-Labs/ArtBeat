@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ART BEAT — social share card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #e040a0;
+    font-family: 'DM Sans', sans-serif;
+    position: relative;
+  }
+  .blob { position: absolute; border-radius: 50%; filter: blur(70px); }
+  .b1 { width: 520px; height: 520px; background: #ffd000; top: -180px; right: -120px; opacity: .85; }
+  .b2 { width: 460px; height: 460px; background: #00c2ff; bottom: -190px; left: -130px; opacity: .8; }
+  .b3 { width: 340px; height: 340px; background: #9b51e0; top: 180px; left: 300px; opacity: .45; }
+
+  .stage {
+    position: relative; z-index: 2; height: 100%;
+    display: flex; align-items: center; gap: 48px; padding: 0 64px;
+  }
+  .left { flex: 1 1 auto; min-width: 0; }
+
+  .wordmark {
+    font-family: 'Fredoka', sans-serif; font-weight: 700;
+    font-size: 128px; line-height: .95; letter-spacing: -3px;
+    color: #fff; text-shadow: 6px 6px 0 #2e1a28;
+  }
+  .pill {
+    display: inline-block; margin-top: 26px;
+    background: #ffd000; color: #2e1a28;
+    font-family: 'Fredoka', sans-serif; font-weight: 600;
+    font-size: 30px; letter-spacing: 2px; text-transform: uppercase;
+    padding: 12px 30px; border-radius: 999px;
+    border: 4px solid #2e1a28; box-shadow: 5px 5px 0 #2e1a28;
+  }
+  .sub { margin-top: 24px; color: #fff; font-size: 40px; font-weight: 500; white-space: nowrap; }
+  .sub b { font-weight: 700; }
+
+  .tags { position: absolute; z-index: 2; left: 64px; bottom: 56px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .tag {
+    background: rgba(255,255,255,.16); color: #fff;
+    border: 3px solid #fff; border-radius: 999px;
+    font-size: 22px; font-weight: 700; padding: 8px 20px;
+  }
+
+  .card {
+    flex: 0 0 auto; width: 340px; height: 340px;
+    background: #fff; border: 6px solid #2e1a28; border-radius: 52px;
+    box-shadow: 12px 12px 0 #2e1a28;
+    display: flex; align-items: center; justify-content: center;
+    transform: rotate(4deg);
+  }
+  .card img { width: 268px; height: 268px; object-fit: contain; }
+</style>
+</head>
+<body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <div class="stage">
+    <div class="left">
+      <div class="wordmark">ART BEAT</div>
+      <span class="pill">Art &bull; Music &bull; Dance</span>
+      <div class="sub">Classes for all ages in <b>Lucknow</b></div>
+    </div>
+    <div class="card">
+      <img src="../assets/logo.jpeg" alt="">
+    </div>
+  </div>
+
+  <div class="tags">
+    <span class="tag">Painting</span>
+    <span class="tag">Sketching</span>
+    <span class="tag">Piano</span>
+    <span class="tag">Guitar</span>
+    <span class="tag">Tabla</span>
+    <span class="tag">Singing</span>
+    <span class="tag">Zumba</span>
+    <span class="tag">Garba</span>
+  </div>
+</body>
+</html>
